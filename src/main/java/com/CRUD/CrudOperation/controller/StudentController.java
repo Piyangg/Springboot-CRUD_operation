@@ -42,4 +42,10 @@ public class StudentController {
        return student;
     }
 
+    @DeleteMapping("/students/delete/{id}")
+    public void removestudent(@PathVariable int id) {
+       Student student = repo.findById(id).get();
+        repo.delete(student);
+    }
+
 }
