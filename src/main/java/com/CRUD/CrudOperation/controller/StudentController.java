@@ -3,9 +3,7 @@ package com.CRUD.CrudOperation.controller;
 import com.CRUD.CrudOperation.entity.Student;
 import com.CRUD.CrudOperation.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +24,10 @@ public class StudentController {
        Student student = repo.findById(id).get();
         return student;
 
+    }
+
+    @PostMapping ("/students/add")
+    public void CreateStudent(@RequestBody Student student){
+        repo.save(student);
     }
 }
