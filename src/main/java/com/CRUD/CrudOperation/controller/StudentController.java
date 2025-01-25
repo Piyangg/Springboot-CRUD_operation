@@ -36,8 +36,8 @@ public class StudentController {
     @PutMapping("/students/update/{id}")
     public Student updateStudents (@PathVariable int id) {
        Student student = repo.findById(id).get();
-       student.setName("Piyang");
-       student.setPercentage(98);
+       student.setFirstName("Piyang");
+       student.setStudent_ID(02000243020);
        repo.save(student);
        return student;
     }

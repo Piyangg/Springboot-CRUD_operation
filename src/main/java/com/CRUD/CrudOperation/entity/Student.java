@@ -9,21 +9,24 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int rollNo;
-    @Column (name = "student_name")
-    private String name;
-    @Column (name = "student_percentage")
-    private float percentage;
-    @Column (name = "student_branch")
-    private String branch;
+    @Column (name = "StudentID")
+    private Integer Student_ID;
+    @Column (name = "LName")
+    private String LastName;
+    @Column (name = "FName")
+    private String FirstName;
+    @Column (name = "Student_School")
+    private String School;
 
     public Student(){
 
     }
 
-    public Student(String name, float percentage, String branch) {
-        this.name = name;
-        this.percentage = percentage;
-        this.branch = branch;
+    public Student(Integer student_ID, String lastName, String firstName, String school) {
+        Student_ID = student_ID;
+        LastName = lastName;
+        FirstName = firstName;
+        School = school;
     }
 
     public int getRollNo() {
@@ -34,37 +37,46 @@ public class Student {
         this.rollNo = rollNo;
     }
 
-    public String getName() {
-        return name;
+    public Integer getStudent_ID() {
+        return Student_ID;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStudent_ID(Integer student_ID) {
+        Student_ID = student_ID;
     }
 
-    public float getPercentage() {
-        return percentage;
+    public String getLastName() {
+        return LastName;
     }
 
-    public void setPercentage(float percentage) {
-        this.percentage = percentage;
+    public void setLastName(String lastName) {
+        LastName = lastName;
     }
 
-    public String getBranch() {
-        return branch;
+    public String getFirstName() {
+        return FirstName;
     }
 
-    public void setBranch(String branch) {
-        this.branch = branch;
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
+    }
+
+    public String getSchool() {
+        return School;
+    }
+
+    public void setSchool(String school) {
+        School = school;
     }
 
     @Override
     public String toString() {
         return "Student{" +
                 "rollNo=" + rollNo +
-                ", name='" + name + '\'' +
-                ", percentage=" + percentage +
-                ", branch='" + branch + '\'' +
+                ", Student_ID=" + Student_ID +
+                ", LastName='" + LastName + '\'' +
+                ", FirstName='" + FirstName + '\'' +
+                ", School='" + School + '\'' +
                 '}';
     }
 }
